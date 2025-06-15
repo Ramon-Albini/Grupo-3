@@ -1,16 +1,11 @@
 package com.Facil.Nota.Projeto.Models;
 
-import java.util.List;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -23,26 +18,19 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "students")//entidade ESTUDANTE	
-public class Student {
+@Table(name = "users") //entidade USUARIOS
+public class User {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	Long id;
+	private Long id;
 	@Column(nullable = false)
-	String name;
+	private String login;
+	@Column(nullable = false)
+	private String passwaord;
 	
-	@ManyToMany
-	@JoinTable(
-			name = "student_course",
-			joinColumns = @JoinColumn(name = "student_id"),
-			inverseJoinColumns = @JoinColumn(name = "course_id"))
-	List<Course> coursesIds;
-	@OneToMany(mappedBy = "studentId")
-	List<Grade> gradesIds;
-	@OneToMany(mappedBy = "studentId")
-	List<Absence> absencesIds;
-	@OneToOne(mappedBy = "student")
-	private User userId;
+	@OneToOne
+	@JoinColumn(name = "student_id", referencedColumnName = "id")
+	private Student student;
 	
 }
