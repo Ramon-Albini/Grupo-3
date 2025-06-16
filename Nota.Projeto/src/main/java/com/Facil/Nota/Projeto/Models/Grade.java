@@ -33,9 +33,9 @@ public class Grade {
 	private String description;
 	@ManyToOne
 	@JoinColumn(name = "course_id")
-	private Course courseId;
+	private Course course;
 	@ManyToOne
 	@JoinColumn(name = "student_id")
-	private Student studentId;
+	private Student student;
 	
 }

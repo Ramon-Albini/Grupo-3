@@ -28,6 +28,6 @@ public class Course {
 	@Column(nullable = false)
 	private String name;
 	
-	@ManyToMany(mappedBy = "coursesIds")
-	private List<Student> studentsIds;	
+	@ManyToMany(mappedBy = "courses")
+	private List<Student> students;	
 }
