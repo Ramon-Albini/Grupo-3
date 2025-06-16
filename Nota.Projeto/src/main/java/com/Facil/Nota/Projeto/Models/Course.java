@@ -2,6 +2,8 @@ package com.Facil.Nota.Projeto.Models;
 
 import java.util.List;
 
+import com.Facil.Nota.Projeto.DTOs.CourseDTO;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -30,4 +32,9 @@ public class Course {
 	
 	@ManyToMany(mappedBy = "courses")
 	private List<Student> students;	
+	
+	public Course(CourseDTO courseDTO) {
+		this.id = courseDTO.id();
+		this.name = courseDTO.name();
+	}
 }

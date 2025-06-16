@@ -2,6 +2,8 @@ package com.Facil.Nota.Projeto.Models;
 
 import java.util.Date;
 
+import com.Facil.Nota.Projeto.DTOs.GradeDTO;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -37,5 +39,12 @@ public class Grade {
 	@ManyToOne
 	@JoinColumn(name = "student_id")
 	private Student student;
+	
+	public Grade(GradeDTO gradeDTO) {
+		this.id = gradeDTO.id();
+		this.value = gradeDTO.value();
+		this.date = gradeDTO.date();
+		this.description = gradeDTO.description();
+	}
 	
 }

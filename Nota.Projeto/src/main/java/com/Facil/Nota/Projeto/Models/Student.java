@@ -2,6 +2,8 @@ package com.Facil.Nota.Projeto.Models;
 
 import java.util.List;
 
+import com.Facil.Nota.Projeto.DTOs.StudentDTO;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -44,5 +46,10 @@ public class Student {
 	List<Absence> absences;
 	@OneToOne(mappedBy = "student")
 	private User user;
+	
+	public Student(StudentDTO studentDTO) {
+		this.id = studentDTO.id();
+		this.name = studentDTO.name();
+	}
 	
 }
