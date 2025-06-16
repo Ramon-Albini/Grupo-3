@@ -1,5 +1,7 @@
 package com.Facil.Nota.Projeto.Models;
 
+import com.Facil.Nota.Projeto.DTOs.UserDTO;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -27,10 +29,15 @@ public class User {
 	@Column(nullable = false)
 	private String login;
 	@Column(nullable = false)
-	private String passwaord;
+	private String password;
 	
 	@OneToOne
 	@JoinColumn(name = "student_id", referencedColumnName = "id")
 	private Student student;
 	
+	public User(UserDTO userDTO) {
+		this.id = userDTO.id();
+		this.login = userDTO.login();
+		this.password = userDTO.password();
+	}
 }

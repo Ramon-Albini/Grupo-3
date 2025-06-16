@@ -2,6 +2,8 @@ package com.Facil.Nota.Projeto.Models;
 
 import java.util.Date;
 
+import com.Facil.Nota.Projeto.DTOs.AbsenceDTO;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -35,4 +37,10 @@ public class Absence {
 	@ManyToOne
 	@JoinColumn(name = "student_id")
 	private Student student;
+	
+	public Absence(AbsenceDTO absenceDTO) {
+		this.id = absenceDTO.id();
+		this.date = absenceDTO.date();
+		this.reason = absenceDTO.reason();
+	}
 }
