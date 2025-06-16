@@ -37,12 +37,12 @@ public class Student {
 			name = "student_course",
 			joinColumns = @JoinColumn(name = "student_id"),
 			inverseJoinColumns = @JoinColumn(name = "course_id"))
-	List<Course> coursesIds;
-	@OneToMany(mappedBy = "studentId")
-	List<Grade> gradesIds;
-	@OneToMany(mappedBy = "studentId")
-	List<Absence> absencesIds;
+	List<Course> courses;
+	@OneToMany(mappedBy = "student")
+	List<Grade> grades;
+	@OneToMany(mappedBy = "student")
+	List<Absence> absences;
 	@OneToOne(mappedBy = "student")
-	private User userId;
+	private User user;
 	
 }
