@@ -1,5 +1,7 @@
 package com.Facil.Nota.Projeto.Services;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.Facil.Nota.Projeto.DTOs.UserDTO;
@@ -34,6 +36,12 @@ public class UserService {
 		userEntity.setId(id);
 		
 		return new UserDTO(userRepository.save(userEntity));	
+	}
+	
+	public List<UserDTO> listAllUsers(){
+		return userRepository.findAll()
+				.stream().map(user -> new UserDTO(user
+						)).toList();
 	}
 
 	public UserDTO findById(Long id) {

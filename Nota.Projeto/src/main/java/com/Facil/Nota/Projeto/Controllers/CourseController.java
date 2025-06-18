@@ -22,14 +22,14 @@ public class CourseController {
 	@Autowired
 	CourseService courseService;
 	
-	@GetMapping("/{id}")
-	public CourseDTO findById(@PathVariable Long id) {
-		return courseService.findById(id);
-	}
-	
 	@GetMapping
 	public List<CourseDTO> listAllCourses() {
 		return courseService.listAllCourses();
+	}
+	
+	@GetMapping("/{id}")
+	public CourseDTO findById(@PathVariable Long id) {
+		return courseService.findById(id);
 	}
 	
 	@PostMapping

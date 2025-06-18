@@ -2,6 +2,8 @@ package com.Facil.Nota.Projeto.Services;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.Facil.Nota.Projeto.DTOs.AbsenceDTO;
 import com.Facil.Nota.Projeto.Exceptions.NotFoundException;
 import com.Facil.Nota.Projeto.Models.Absence;
@@ -13,6 +15,7 @@ import com.Facil.Nota.Projeto.Repositories.StudentRepository;
 
 import jakarta.transaction.Transactional;
 
+@Service
 public class AbsenceService {
 	
 	private final StudentRepository studentRepository;

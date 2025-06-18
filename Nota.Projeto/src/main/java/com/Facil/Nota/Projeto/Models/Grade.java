@@ -3,6 +3,7 @@ package com.Facil.Nota.Projeto.Models;
 import java.util.Date;
 
 import com.Facil.Nota.Projeto.DTOs.GradeDTO;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -34,9 +35,11 @@ public class Grade {
 	@Column(nullable = false)
 	private String description;
 	@ManyToOne
+	@JsonIgnore
 	@JoinColumn(name = "course_id")
 	private Course course;
 	@ManyToOne
+	@JsonIgnore
 	@JoinColumn(name = "student_id")
 	private Student student;
 	

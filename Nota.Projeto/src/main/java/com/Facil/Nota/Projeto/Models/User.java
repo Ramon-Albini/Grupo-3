@@ -1,6 +1,7 @@
 package com.Facil.Nota.Projeto.Models;
 
 import com.Facil.Nota.Projeto.DTOs.UserDTO;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -32,6 +33,7 @@ public class User {
 	private String password;
 	
 	@OneToOne
+	@JsonIgnore
 	@JoinColumn(name = "student_id", referencedColumnName = "id")
 	private Student student;
 	

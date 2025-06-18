@@ -1,5 +1,7 @@
 package com.Facil.Nota.Projeto.Controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,6 +21,11 @@ public class UserController {
 	
 	@Autowired
 	UserService userService;
+	
+	@GetMapping
+	public List<UserDTO> listAllUsers() {
+		return userService.listAllUsers();
+	}
 	
 	@GetMapping("/{id}")
 	public UserDTO findById(@PathVariable Long id) {

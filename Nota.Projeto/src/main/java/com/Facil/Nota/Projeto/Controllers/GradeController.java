@@ -22,14 +22,14 @@ public class GradeController {
 	@Autowired
 	GradeService gradeService;
 	
-	@GetMapping("/{id}")
-	public GradeDTO findById(@PathVariable Long id) {
-		return gradeService.findById(id);
-	}
-	
 	@GetMapping
 	public List<GradeDTO> listAllGrades() {
 		return gradeService.listAllGrades();
+	}
+	
+	@GetMapping("/{id}")
+	public GradeDTO findById(@PathVariable Long id) {
+		return gradeService.findById(id);
 	}
 	
 	@PostMapping

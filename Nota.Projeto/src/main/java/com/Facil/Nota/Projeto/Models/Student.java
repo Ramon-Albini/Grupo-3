@@ -3,6 +3,7 @@ package com.Facil.Nota.Projeto.Models;
 import java.util.List;
 
 import com.Facil.Nota.Projeto.DTOs.StudentDTO;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -35,16 +36,20 @@ public class Student {
 	String name;
 	
 	@ManyToMany
+	@JsonIgnore
 	@JoinTable(
 			name = "student_course",
 			joinColumns = @JoinColumn(name = "student_id"),
 			inverseJoinColumns = @JoinColumn(name = "course_id"))
 	List<Course> courses;
 	@OneToMany(mappedBy = "student")
+	@JsonIgnore
 	List<Grade> grades;
 	@OneToMany(mappedBy = "student")
+	@JsonIgnore
 	List<Absence> absences;
 	@OneToOne(mappedBy = "student")
+	@JsonIgnore
 	private User user;
 	
 	public Student(StudentDTO studentDTO) {

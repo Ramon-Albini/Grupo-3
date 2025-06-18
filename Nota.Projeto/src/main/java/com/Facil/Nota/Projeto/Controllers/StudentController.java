@@ -1,5 +1,7 @@
 package com.Facil.Nota.Projeto.Controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,6 +21,11 @@ public class StudentController {
 	
 	@Autowired
 	StudentService studentService;
+	
+	@GetMapping
+	public List<StudentDTO> listAllStudents() {
+		return studentService.listAllStudents();
+	}
 	
 	@GetMapping("/{id}")
 	public StudentDTO findById(@PathVariable Long id) {

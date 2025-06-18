@@ -130,6 +130,11 @@ public class StudentService {
 		
 	}
 	
+	public List<StudentDTO> listAllStudents(){
+		return studentRepository.findAll()
+				.stream().map(student -> new StudentDTO(student)).toList();
+	}
+	
 	public StudentDTO findById(Long id) {
 		return new StudentDTO(studentRepository
 				.findById(id)
