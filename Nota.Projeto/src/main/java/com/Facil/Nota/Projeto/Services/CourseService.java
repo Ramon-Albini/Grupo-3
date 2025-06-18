@@ -3,6 +3,8 @@ package com.Facil.Nota.Projeto.Services;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.springframework.stereotype.Service;
+
 import com.Facil.Nota.Projeto.DTOs.CourseDTO;
 import com.Facil.Nota.Projeto.Exceptions.NotFoundException;
 import com.Facil.Nota.Projeto.Models.Course;
@@ -12,6 +14,7 @@ import com.Facil.Nota.Projeto.Repositories.StudentRepository;
 
 import jakarta.transaction.Transactional;
 
+@Service
 public class CourseService {
 	
 	private final CourseRepository courseRepository;

@@ -22,15 +22,16 @@ public class AbsenceController {
 	@Autowired
 	AbsenceService absenceService;
 	
+	@GetMapping
+	public List<AbsenceDTO> listAllAbsences() {
+		return absenceService.listAllAbsences();
+	}
+	
 	@GetMapping("/{id}")
 	public AbsenceDTO findById(@PathVariable Long id) {
 		return absenceService.findById(id);
 	}
 	
-	@GetMapping
-	public List<AbsenceDTO> listAllAbsences() {
-		return absenceService.listAllAbsences();
-	}
 	
 	@PostMapping
 	public AbsenceDTO saveAbsence(@RequestBody AbsenceDTO absenceDTO) {
