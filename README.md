@@ -31,7 +31,7 @@
 
 - DELETE/users/{id} - Remove um usuário 
 
-## Cursos (Courses)
+## Matérias (Courses)
 
 - GET/courses - Lista todos os cursos
 
