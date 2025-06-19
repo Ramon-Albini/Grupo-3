@@ -183,3 +183,7 @@ Erros
  **User**  1:1  **Student** </br>
  **Grade**  N:1  **Student, Course** </br>
  **Absense**  N:1  **Student, Course** </br>
+
+ ## Testes:
+ **Teste** realizado utilizando o postman em todas os endpoints
+ 
