@@ -167,16 +167,16 @@ Content-Type: application/json
 campos:
   - **id** - Long
   - **name** - String
-  - **courses** - List<Course>
-  - **grades** - List<grade>
-  - **absenses** - List<Absence>
+  - **courses** - List\<Course>
+  - **grades** - List\<grade>
+  - **absenses** - List\<Absence>
   - **user** - User 
 
 **Tabela Course:** </br> 
 campos:
 - **id** - Long
 - **name** - String
-- **students** - List<Students>  
+- **students** - List\<Students>  
 
 **Tabela Grades:** </br>
 campos:
