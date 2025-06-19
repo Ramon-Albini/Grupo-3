@@ -1,76 +1,78 @@
 # Documentação API
 
-## Visão geral:  
+## 🔍 Visão geral:  
  
-   A API faz o gerenciamento de sistemas acadêmicos que permite o cadastro, edição e exclusão de informações como alunos (Students), Usuários(Users), Matérias(Courses), Notas(Grades), Faltas(Absences)
-   O sistema utiliza arquitetura RESTful com SpringBoot e DTOs para transporte de dados,separação de camadas e uso de anotações JPA.Todas as repostas estão no padrão .json e caso haja possíveis erros a api retorna códigos de erro apropriados
+   A API faz o gerenciamento de sistemas acadêmicos que permite o cadastro, edição e exclusão de informações como alunos (Students), Usuários(Users), Cursos(Courses), Notas(Grades), Faltas(Absences). O sistema utiliza arquitetura RESTful com SpringBoot e DTOs para transporte de dados,separação de camadas e uso de anotações JPA.Todas as repostas estão no padrão .json e caso haja possíveis erros a api retorna códigos de erro apropriados
 
-   ## Endpoints e Métodos HTTP:
+ ## 📍 Endpoints e Métodos HTTP:
 
- ## Alunos (Students):
+ ### 🧑‍🎓 Alunos (Students):
 
-- GET/students - Lista todos os alunos
+- **GET/students** - Lista todos os alunos
 
-- GET/students/{id} - Retorna um aluno pelo ID
+- **GET/students/{id}** - Retorna um aluno pelo ID
 
-- POST/students - Cria um novo aluno
+- **POST/students** - Cria um novo aluno
 
-- PUT/students/{id} - Atualiza um aluno existente
+- **PUT/students/{id}** - Atualiza um aluno existente
 
-- DELETE /students/{id} - Remove um aluno
+- **DELETE /students/{id}** - Remove um aluno
 
-## Usuários (Users)
+### 👤 Usuários (Users)
 
-- GET/users - Lista todos os usuários
+- **GET/users** - Lista todos os usuários
 
-- GET/users/{id} - Retorna um usuário pelo ID
+- **GET/users/{id}** - Retorna um usuário pelo ID
 
-- POST/users - Cria um novo usuário
+- **POST/users** - Cria um novo usuário
 
-- PUT/users/{id} - Atualiza um usuário existente
+- **PUT/users/{id}** - Atualiza um usuário existente
 
-- DELETE/users/{id} - Remove um usuário 
+- **DELETE/users/{id}** - Remove um usuário 
 
-## Matérias (Courses)
+### 📔 Cursos (Courses)
 
-- GET/courses - Lista todos as matérias
+- **GET/courses** - Lista todos os cursos
 
-- GET/courses/{id} - Retorna uma matéria pelo ID
+- **GET/courses/{id}** - Retorna um curso pelo ID
 
-- POST/courses - Cria uma nova matéria
+- **POST/courses** - Cria um novo curso
 
-- PUT/courses/{id} - Atualiza uma matéria existente
+- **PUT/courses/{id}** - Atualiza um curso existente
 
-- DELETE/courses/{id} - Remove uma matéria
+- **DELETE/courses/{id}** - Remove um curso
 
-## Notas (Grades)
+### 📂 Notas (Grades)
 
-- GET/grades - Lista todas as aulas
+- **GET/grades** - Lista todas as aulas
 
-- GET/grades/{id} - Retorna notas pelo ID
+- **GET/grades/{id}** - Retorna notas pelo ID
 
-- POST/grades - Cria um nova nota
+- **POST/grades** - Cria um nova nota
 
-- PUT/grades/{id} - Atualiza uma nota existente
+- **PUT/grades/{id}** - Atualiza uma nota existente
 
-- DELETE /grades/{id} - Remove uma nota
+- **DELETE /grades/{id}** - Remove uma nota
 
- ## Faltas (Absences)
+ ### ⛔ Faltas (Absences)
 
-- GET/absences - Lista todos as faltas
+- **GET/absences** - Lista todos as faltas
 
-- GET/absences/{id} - Retorna faltas pelo ID
+- **GET/absences/{id}** - Retorna faltas pelo ID
 
-- POST/absences - Cria um nova falta
+- **POST/absences** - Cria um nova falta
 
-- PUT/absences/{id} - Atualiza uma falta existente
+- **PUT/absences/{id}** - Atualiza uma falta existente
 
-- DELETE/absences/{id} - Remove uma falta
-Path Parameters
+- **DELETE/absences/{id}** - Remove uma 
 
-- {id}: Identificador único do recurso (Long).
+## 🅿️ Parametros 
 
-## Body Parameters (exemplo: StudentDTO):
+### 🛣️ Path Parameters
+
+- **{id}**: Identificador único do recurso (Long).
+
+### 🔢 Body Parameters (exemplo: StudentDTO):
 
 ```json
 {
@@ -82,7 +84,7 @@ Path Parameters
 }
 ```
 
-## Exemplos de Requisição
+## 🔹 Exemplos de Requisição
 
 Criar novo aluno (POST /students)
 
@@ -114,25 +116,25 @@ Content-Type: application/json
 }
 ```
 
- # Respostas
+ # 🚀 Respostas
 
- Sucesso
+**Sucesso**
 
-- 200 OK - Requisição processada 
+- **200 OK** - Requisição processada 
 
-- 201 Created - Recurso criado 
+- **201 Created** - Recurso criado 
 
-- 204 No Content - Recurso deletado 
+- **204 No Content** - Recurso deletado 
 
-Erros
+**Erros**
 
-- 404 Not Found - Não encontrado
+- **404 Not Found** - Não encontrado
 
-- 400 Bad Request - Dados inválidos
+- **400 Bad Request** - Dados inválidos
 
-- 500 Internal Server Error - Erro interno
+- **500 Internal Server Error** - Erro interno
 
- Mensagens de Erro (padrão)
+## ⚠️ Mensagens de Erro (padrão)
 
 ```json 
 {
@@ -144,7 +146,7 @@ Erros
 } 
  ```
 
-## Organização do projeto
+## 📦 Organização do projeto
 
 **controllers** - Exposição da API REST com endpoints para entidades: Student, User, Course, Grade e Absence.
 
@@ -159,24 +161,48 @@ Erros
 **exceptions** - Exceções para melhorar clareza e consistência no tratamento e mensagens de erros.
 
 
-## Documentação das Models e Exception:
+## 📳 Documentação das Models e Exception:
 
-**Tabela Student:**
-  - campos: id (Long), name(String), courses(List<Course>), grades(List<grade>), absenses(List<Absence>), user(User 1:1)
+**Tabela Student:** </br> </br>
+**campos**:
+  - id - Long
+  - name - String
+  - courses - List<Course>
+  - grades - List<grade>
+  - absenses - List<Absence>
+  - user - User 
 
-**Tabela Course:**
-- campos: id(Long), name(String), students(List<Students>)  
+**Tabela Course:** </br> </br>
+**campos**:
+- id - Long
+- name - String
+- students - List<Students>  
 
-**Tabela Grades:**
-- campos: id(Long), value(double), date(Date), description(String), course(Course), student(student)
+**Tabela Grades:** </br> </br>
+**campos**:
+- id - Long
+- value - Double
+- date - Date
+- description - String
+- course - Course
+- student - Student
 
-**Tabela Absences:**
-- campos: id (Long), date (Date), reason(String), course (Course), student(Student)
+**Tabela Absences:** </br> </br>
+**campos**: 
+- id - Long
+- date - Date
+- reason - String
+- course - Course
+- student - Student
 
-**Tabela Users:**
-- campos: id(Long), login(String), password(String),student(Student)
+**Tabela Users:**</br> </br>
+**campos**: 
+- id - Long
+- login - String
+- password - String
+- student - Student
 
-## Relacionamento entre entidades:
+## 🔁 Relacionamento entre entidades:
 
  **Student**  1:N  **grade,absence** </br>
  **Student**  N:M  **Courses** </br>
