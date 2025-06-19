@@ -2,7 +2,7 @@
 
 ## Visão geral:  
  
-   A API faz o gerenciamento de sistemas acadêmicos que permite o cadastro, edição e exclusão de informações como alunos (Students), Usuários(Users), Cursos(Courses), Notas(Grades), Faltas(Absences)
+   A API faz o gerenciamento de sistemas acadêmicos que permite o cadastro, edição e exclusão de informações como alunos (Students), Usuários(Users), Matérias(Courses), Notas(Grades), Faltas(Absences)
    O sistema utiliza arquitetura RESTful com SpringBoot e DTOs para transporte de dados,separação de camadas e uso de anotações JPA.Todas as repostas estão no padrão .json e caso haja possíveis erros a api retorna códigos de erro apropriados
 
    ## Endpoints e Métodos HTTP:
