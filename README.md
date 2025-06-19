@@ -2,7 +2,7 @@
 
 ## 🔍 Visão geral:  
  
-   A API faz o gerenciamento de sistemas acadêmicos que permite o cadastro, edição e exclusão de informações como alunos (Students), Usuários(Users), Cursos(Courses), Notas(Grades), Faltas(Absences). O sistema utiliza arquitetura RESTful com SpringBoot e DTOs para transporte de dados,separação de camadas e uso de anotações JPA.Todas as repostas estão no padrão .json e caso haja possíveis erros a api retorna códigos de erro apropriados
+   A API faz o gerenciamento de sistemas acadêmicos que permite o cadastro, edição e exclusão de informações como alunos (Students), Usuários(Users), Matérias(Courses), Notas(Grades), Faltas(Absences). O sistema utiliza arquitetura RESTful com SpringBoot e DTOs para transporte de dados,separação de camadas e uso de anotações JPA.Todas as repostas estão no padrão .json e caso haja possíveis erros a api retorna códigos de erro apropriados
 
  ## 📍 Endpoints e Métodos HTTP:
 
@@ -30,17 +30,17 @@
 
 - **DELETE/users/{id}** - Remove um usuário 
 
-### 📔 Cursos (Courses)
+### 📔 Matérias (Courses)
 
-- **GET/courses** - Lista todos os cursos
+- **GET/courses** - Lista todas as matérias
 
-- **GET/courses/{id}** - Retorna um curso pelo ID
+- **GET/courses/{id}** - Retorna uma matéria pelo ID
 
-- **POST/courses** - Cria um novo curso
+- **POST/courses** - Cria uma nova matéria
 
-- **PUT/courses/{id}** - Atualiza um curso existente
+- **PUT/courses/{id}** - Atualiza uma matéria existente
 
-- **DELETE/courses/{id}** - Remove um curso
+- **DELETE/courses/{id}** - Remove uma matéria
 
 ### 📂 Notas (Grades)
 
@@ -66,7 +66,7 @@
 
 - **DELETE/absences/{id}** - Remove uma 
 
-## 🅿️ Parametros 
+## 🅿️ Parâmetros 
 
 ### 🛣️ Path Parameters
 
@@ -104,7 +104,7 @@ Content-Type: application/json
 Obter nota por ID (GET/grades/4):
    GET/grades/4
 
-Atualizar curso (PUT /courses/2):
+Atualizar matéria (PUT /courses/2):
 
 PUT /courses/2
 Content-Type: application/json
@@ -210,6 +210,6 @@ campos:
  **Grade**  N:1  **Student, Course** </br>
  **Absense**  N:1  **Student, Course** </br>
 
- ## Testes:
- **Teste** realizado utilizando o postman em todas os endpoints
+ ## ℹ️ Testes:
+ Teste realizado utilizando o postman em todos os endpoints
  
