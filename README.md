@@ -33,15 +33,15 @@
 
 ## Matérias (Courses)
 
-- GET/courses - Lista todos os cursos
+- GET/courses - Lista todos as matérias
 
-- GET/courses/{id} - Retorna um curso pelo ID
+- GET/courses/{id} - Retorna uma matéria pelo ID
 
-- POST/courses - Cria um novo curso
+- POST/courses - Cria uma nova matéria
 
-- PUT/courses/{id} - Atualiza um curso existente
+- PUT/courses/{id} - Atualiza uma matéria existente
 
-- DELETE/courses/{id} - Remove um curso
+- DELETE/courses/{id} - Remove uma matéria
 
 ## Notas (Grades)
 
