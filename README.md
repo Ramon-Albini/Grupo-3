@@ -163,44 +163,44 @@ Content-Type: application/json
 
 ## 📳 Documentação das Models e Exception:
 
-**Tabela Student:** </br> </br>
-**campos**:
-  - id - Long
-  - name - String
-  - courses - List<Course>
-  - grades - List<grade>
-  - absenses - List<Absence>
-  - user - User 
+**Tabela Student:** </br>
+campos:
+  - **id** - Long
+  - **name** - String
+  - **courses** - List<Course>
+  - **grades** - List<grade>
+  - **absenses** - List<Absence>
+  - **user** - User 
 
-**Tabela Course:** </br> </br>
-**campos**:
-- id - Long
-- name - String
-- students - List<Students>  
+**Tabela Course:** </br> 
+campos:
+- **id** - Long
+- **name** - String
+- **students** - List<Students>  
 
-**Tabela Grades:** </br> </br>
-**campos**:
-- id - Long
-- value - Double
-- date - Date
-- description - String
-- course - Course
-- student - Student
+**Tabela Grades:** </br>
+campos:
+- **id** - Long
+- **value** - Double
+- **date** - Date
+- **description** - String
+- **course** - Course
+- **student** - Student
 
-**Tabela Absences:** </br> </br>
-**campos**: 
-- id - Long
-- date - Date
-- reason - String
-- course - Course
-- student - Student
+**Tabela Absences:** </br> 
+campos: 
+- **id** - Long
+- **date** - Date
+- **reason** - String
+- **course** - Course
+- **student** - Student
 
-**Tabela Users:**</br> </br>
-**campos**: 
-- id - Long
-- login - String
-- password - String
-- student - Student
+**Tabela Users:**</br>
+campos: 
+- **id** - Long
+- **login** - String
+- **password** - String
+- **student** - Student
 
 ## 🔁 Relacionamento entre entidades:
 
