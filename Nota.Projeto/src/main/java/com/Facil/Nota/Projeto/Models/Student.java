@@ -1,10 +1,12 @@
 package com.Facil.Nota.Projeto.Models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.Facil.Nota.Projeto.DTOs.StudentDTO;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -40,16 +42,17 @@ public class Student {
 	@JoinTable(
 			name = "student_course",
 			joinColumns = @JoinColumn(name = "student_id"),
-			inverseJoinColumns = @JoinColumn(name = "course_id"))
-	List<Course> courses;
-	@OneToMany(mappedBy = "student")
+			inverseJoinColumns = @JoinColumn(name = "course_id")
+			)
+	List<Course> courses = new ArrayList<>();
+	@OneToMany(mappedBy = "student", cascade = CascadeType.ALL)
 	@JsonIgnore
-	List<Grade> grades;
-	@OneToMany(mappedBy = "student")
+	List<Grade> grades = new ArrayList<>();
+	@OneToMany(mappedBy = "student", cascade = CascadeType.ALL)
 	@JsonIgnore
-	List<Absence> absences;
-	@OneToOne(mappedBy = "student")
-	@JsonIgnore
+	List<Absence> absences = new ArrayList<>();
+	@OneToOne
+	@JoinColumn(name = "user_id")
 	private User user;
 	
 	public Student(StudentDTO studentDTO) {

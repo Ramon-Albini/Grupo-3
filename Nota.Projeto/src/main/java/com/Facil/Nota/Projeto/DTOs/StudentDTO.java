@@ -22,7 +22,7 @@
 						.map(grade -> grade.getId()).toList(),
 					student.getAbsences().stream()
 						.map(absence -> absence.getId()).toList(),
-					student.getUser().getId()
+					student.getUser() != null ? student.getUser().getId() : null
 					);
 		}
 	
