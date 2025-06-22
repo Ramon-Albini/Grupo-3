@@ -64,7 +64,7 @@
 
 - **PUT/absences/{id}** - Atualiza uma falta existente
 
-- **DELETE/absences/{id}** - Remove uma 
+- **DELETE/absences/{id}** - Remove uma falta
 
 ## 🅿️ Parâmetros 
 
